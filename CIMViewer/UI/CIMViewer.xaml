@@ -61,6 +61,12 @@
                              TextWrapping="Wrap" IsReadOnly="True" MaxLines="4"
                              Margin="2,3"></TextBox>
                 </Expander>
+                <Expander x:Name="Report_Directory" Header="Report" IsExpanded="True" DockPanel.Dock="Bottom">
+                    <TextBox Text="{Binding Path=ReportDir, Mode=TwoWay}" 
+                             TextWrapping="Wrap" IsReadOnly="True" MaxLines="4"
+                             Margin="2,3" MouseDoubleClick="TextBox_MouseDoubleClick"></TextBox>
+                    
+                </Expander>
                 
                 <avalonedit:TextEditor Name="AvalonTextEditor" 
                             SyntaxHighlighting="XML"
@@ -99,10 +105,11 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
                         Grid.Row="2" Margin="0,15,0,5">
-            <Button Content="Refresh" Command="{Binding Path=RefreshCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"></Button>
-            <Button Content="Validate" Command="{Binding Path=ValidateCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"></Button>
-            <Button Content="Clear" Command="{Binding Path=ClearCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"></Button>
-            <Button Content="Save" Command="{Binding Path=SaveCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"></Button>
+            <Button Content="Report" Command="{Binding ReportCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}" />
+            <Button Content="Refresh" Command="{Binding RefreshCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"/>
+            <Button Content="Validate" Command="{Binding ValidateCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"/>
+            <Button Content="Clear" Command="{Binding ClearCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"/>
+            <Button Content="Save" Command="{Binding SaveCommand}" Margin="5,1" Style="{DynamicResource Esri_Button}"/>
         </StackPanel>
 
     </Grid>
